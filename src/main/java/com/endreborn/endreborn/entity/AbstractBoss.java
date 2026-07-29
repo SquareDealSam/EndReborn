@@ -7,6 +7,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
@@ -83,7 +84,8 @@ public abstract class AbstractBoss extends Monster {
     public void aiStep() {
         super.aiStep();
         if (this.level() instanceof ServerLevel sl) {
-            this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
+            float healthPercent = this.getMaxHealth() > 0 ? this.getHealth() / this.getMaxHealth() : 0;
+            this.bossEvent.setProgress(Mth.clamp(healthPercent, 0.0F, 1.0F));
             if (this.attackTicks > 0 && --this.attackTicks == 0) {
                 this.entityData.set(ATTACK_STATE, 0);
             }
@@ -102,8 +104,10 @@ public abstract class AbstractBoss extends Monster {
 
     // ---- shared attack effects ----
     protected void shootBolt(LivingEntity target) {
-        ShulkerBullet bolt = new ShulkerBullet(this.level(), this, target, this.getDirection().getAxis());
-        this.level().addFreshEntity(bolt);
+        if (target != null) {
+            ShulkerBullet bolt = new ShulkerBullet(this.level(), this, target, this.getDirection().getAxis());
+            this.level().addFreshEntity(bolt);
+        }
     }
 
     protected void nova(ServerLevel level, float radius, float damage, double knockback, ParticleOptions particle) {

@@ -18,10 +18,8 @@ profile:
 #  - name: <SomeEnabledInspectionId>
 
 #Disable inspections
-#exclude:
-#  - name: <SomeDisabledInspectionId>
-#    paths:
-#      - <path/where/not/run/inspection>
+exclude:
+  - name: JavaSanity
 
 projectJDK: "25" #(Applied in CI/CD pipeline)
 

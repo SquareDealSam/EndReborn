@@ -9,9 +9,9 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 
-/** Boss models — animate on idle plus attack/phase state from {@link BossRenderState}. */
-
-/** Chorus Guardian — a floating crystal core with four radiating shard-arms. */
+/** Boss models — animate on idle plus attack/phase state from {@link BossRenderState}.
+ *
+ * Chorus Guardian — a floating crystal core with four radiating shard-arms. */
 class ChorusGuardianModel extends EntityModel<BossRenderState> {
     private final ModelPart core;
     private final ModelPart[] arms;
