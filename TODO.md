@@ -5,6 +5,7 @@
 - [ ] Finish textures
 - [ ] Biomes
 - [ ] Mob logic
+- [ ] Make the release.yml work
 
 ---
 <!--
