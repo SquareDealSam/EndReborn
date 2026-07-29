@@ -38,17 +38,19 @@ jobs:
       - name: Build
         run: ./gradlew build --stacktrace
 
-      - name: Read mod version
+      - name: Read mod metadata
         id: mod
         run: |
           VERSION=$(grep "^mod_version=" gradle.properties | cut -d'=' -f2)
+          NAME=$(grep "^archives_base_name=" gradle.properties | cut -d'=' -f2)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Upload build artifacts
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: endreborn-${{ steps.mod.outputs.version }}
-          path: build/libs/*.jar
+          name: ${{ steps.mod.outputs.name }}-${{ steps.mod.outputs.version }}
+          path: build/libs/${{ steps.mod.outputs.name }}-${{ steps.mod.outputs.version }}.jar
           if-no-files-found: error
 
       - name: Publish GitHub Release
@@ -59,5 +61,4 @@ jobs:
           name: EndReborn ${{ github.event.inputs.tag || github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
           generate_release_notes: true
-          files: |
-            build/libs/*.jar
+          files: build/libs/${{ steps.mod.outputs.name }}-${{ steps.mod.outputs.version }}.jar
