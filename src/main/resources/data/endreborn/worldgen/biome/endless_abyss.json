@@ -16,7 +16,9 @@
     ],
     [],
     [],
-    [],
+    [
+      "endreborn:scatter_glow_fungus"
+    ],
     []
   ],
   "effects": {

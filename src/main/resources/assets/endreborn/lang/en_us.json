@@ -95,5 +95,12 @@
   "biome.endreborn.obsidian_wastes": "Obsidian Wastes",
   "biome.endreborn.crystal_highlands": "Crystal Highlands",
   "biome.endreborn.endless_abyss": "Endless Abyss",
-  "biome.endreborn.chorus_jungle": "Chorus Jungle"
+  "biome.endreborn.chorus_jungle": "Chorus Jungle",
+  "block.endreborn.alien_grass_block": "Alien Grass Block",
+  "block.endreborn.void_moss_block": "Void Moss Block",
+  "block.endreborn.glowstalk": "Glowstalk",
+  "block.endreborn.glow_fungus": "Glow Fungus",
+  "block.endreborn.giant_bloom": "Giant Bloom",
+  "block.endreborn.crystal_flower": "Crystal Flower",
+  "block.endreborn.void_fern": "Void Fern"
 }

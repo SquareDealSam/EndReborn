@@ -410,6 +410,102 @@ def plant_tex(color, name, seed=0, glow=False):
     return _img(arr)
 
 
+def _outline(arr, color=(18, 10, 26, 255)):
+    """Add a 1px dark outline around opaque pixels — the key to readable pixel art."""
+    op = arr[..., 3] > 10
+    out = arr.copy()
+    h, w = arr.shape[:2]
+    for y in range(h):
+        for x in range(w):
+            if not op[y, x]:
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)):
+                    ny, nx = y + dy, x + dx
+                    if 0 <= ny < h and 0 <= nx < w and op[ny, nx]:
+                        out[y, x] = color
+                        break
+    return out
+
+
+def _shade(color, d):
+    r, g, b, _ = _hex(color)
+    return [np.clip(r + d, 0, 255), np.clip(g + d, 0, 255), np.clip(b + d, 0, 255), 255]
+
+
+def lush_ground(name, base, moss, spots, seed=0):
+    """Vibrant mottled ground cover (alien grass / moss)."""
+    rng = _rng(name, seed)
+    r, g, b, _ = _hex(base)
+    arr = np.zeros((S, S, 4))
+    for y in range(S):
+        for x in range(S):
+            d = rng.integers(-16, 16)
+            arr[y, x] = _shade(base, d)
+    for _ in range(70):
+        y, x = rng.integers(0, S, 2)
+        c = moss if rng.random() < 0.6 else rng.choice(spots)
+        arr[y, x] = _shade(c, rng.integers(-14, 22))
+    return _img(arr)
+
+
+def alien_plant(name, kind, stem, bloom, glow=False, seed=0):
+    """Readable cross-plant: outlined stem + a shaped, highlighted bloom."""
+    rng = _rng(name, seed)
+    arr = np.zeros((S, S, 4))
+
+    def put(y, x, color, d=0):
+        if 0 <= y < S and 0 <= x < S:
+            arr[y, x] = _shade(color, d)
+
+    # stem (curved a touch for organic feel)
+    sx = 8
+    for y in range(15, 5, -1):
+        if rng.random() < 0.25:
+            sx += rng.choice([-1, 1])
+        sx = int(np.clip(sx, 6, 9))
+        put(y, sx, stem, rng.integers(-10, 6))
+        put(y, sx - 1, stem, rng.integers(-22, -6))
+
+    top = 5
+    if kind == "flower":
+        for (dy, dx) in [(-1, 0), (-2, 0), (-1, -1), (-1, 1), (-2, -1), (-2, 1), (-3, 0), (0, -2), (0, 2), (-1, -2), (-1, 2)]:
+            put(top + dy, sx + dx, bloom, rng.integers(-18, 22))
+        put(top - 1, sx, bloom, 60)  # bright center
+    elif kind == "stalk":
+        for y in range(top - 3, 8):
+            put(y, sx, bloom, rng.integers(-6, 30))
+            if rng.random() < 0.4:
+                put(y, sx + rng.choice([-1, 1]), bloom, 10)
+        put(top - 3, sx, bloom, 80)  # luminous tip
+    elif kind == "fungus":
+        for dx in range(-3, 4):            # cap
+            put(top, sx + dx, bloom, rng.integers(-10, 20))
+        for dx in range(-2, 3):
+            put(top - 1, sx + dx, bloom, rng.integers(0, 30))
+        put(top - 2, sx, bloom, 40)
+        for dx in (-3, -1, 1, 3):          # spots
+            put(top, sx + dx, _hex(bloom)[:3] and "#ffffff", 0)
+    elif kind == "crystal":
+        for i, (dy, dx) in enumerate([(0, 0), (-1, 0), (-2, 0), (-3, 0), (-1, -2), (-2, -2), (0, 2), (-1, 2), (-2, 3)]):
+            put(top + dy, sx + dx, bloom, 20 if i % 2 else -10)
+        put(top - 3, sx, bloom, 90)
+        put(top - 2, sx - 2, bloom, 70)
+    elif kind == "fern":
+        for y in range(top, 12):
+            put(y, sx, bloom, -6)
+            for dx in (-2, -1, 1, 2):
+                if rng.random() < 0.6:
+                    put(y, sx + dx, bloom, rng.integers(-14, 14))
+
+    arr = _outline(arr)
+    if glow:  # brighten a few pixels so emissive plants pop
+        op = arr[..., 3] > 10
+        ys, xs = np.where(op)
+        for _ in range(min(8, len(ys))):
+            i = rng.integers(0, len(ys))
+            arr[ys[i], xs[i], :3] = np.clip(arr[ys[i], xs[i], :3] + 70, 0, 255)
+    return _img(arr)
+
+
 # ---------- IO helpers ----------
 
 def to_png_bytes(img):

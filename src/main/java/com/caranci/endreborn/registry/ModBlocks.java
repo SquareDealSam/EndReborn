@@ -72,6 +72,17 @@ public final class ModBlocks {
         // --- Biome flora ---
         register("void_bloom", plant(9));
         register("crystal_bloom", plant(0));
+
+        // --- Lush alien vegetation + ground cover (biome overhaul) ---
+        register("alien_grass_block", BlockBehaviour.Properties.of()
+                .strength(0.6F).sound(SoundType.GRASS));
+        register("void_moss_block", BlockBehaviour.Properties.of()
+                .strength(0.6F).sound(SoundType.MOSS));
+        register("glowstalk", plant(13));
+        register("glow_fungus", plant(12));
+        register("giant_bloom", plant(6));
+        register("crystal_flower", plant(9));
+        register("void_fern", plant(0));
     }
 
     private static BlockBehaviour.Properties plant(int light) {

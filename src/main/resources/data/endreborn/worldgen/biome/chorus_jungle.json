@@ -17,7 +17,11 @@
     [],
     [],
     [
-      "endreborn:chorus_tree_dense"
+      "endreborn:jungle_patch",
+      "endreborn:chorus_tree_dense",
+      "endreborn:chorus_tree_giant",
+      "endreborn:scatter_giant_bloom",
+      "endreborn:scatter_void_fern"
     ],
     []
   ],

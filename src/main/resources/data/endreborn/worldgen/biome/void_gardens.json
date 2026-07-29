@@ -17,8 +17,11 @@
     [],
     [],
     [
-      "endreborn:patch_void_bloom",
-      "endreborn:chorus_tree"
+      "endreborn:garden_patch",
+      "endreborn:scatter_glowstalk",
+      "endreborn:scatter_glow_fungus",
+      "endreborn:chorus_tree",
+      "endreborn:patch_void_bloom"
     ],
     []
   ],
