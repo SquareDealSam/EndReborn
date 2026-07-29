@@ -1,6 +1,6 @@
-package com.caranci.endreborn;
+package com.endreborn.endreborn;
 
-import com.caranci.endreborn.client.ModEntityRenderers;
+import com.endreborn.endreborn.client.ModEntityRenderers;
 import net.fabricmc.api.ClientModInitializer;
 
 public class EndRebornClient implements ClientModInitializer {

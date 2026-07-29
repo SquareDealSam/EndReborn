@@ -1,7 +1,7 @@
-package com.caranci.endreborn.client;
+package com.endreborn.endreborn.client;
 
-import com.caranci.endreborn.EndReborn;
-import com.caranci.endreborn.registry.ModEntities;
+import com.endreborn.endreborn.EndReborn;
+import com.endreborn.endreborn.registry.ModEntities;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.minecraft.client.model.geom.ModelLayerLocation;

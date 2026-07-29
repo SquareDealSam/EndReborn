@@ -1,4 +1,4 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
@@ -65,11 +65,11 @@ public class VoidMoth extends PathfinderMob {
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.VOID_MOTH_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.VOID_MOTH_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.VOID_MOTH_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.VOID_MOTH_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.VOID_MOTH_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.VOID_MOTH_DEATH; }
 }

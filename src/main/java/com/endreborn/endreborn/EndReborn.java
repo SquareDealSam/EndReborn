@@ -1,11 +1,11 @@
-package com.caranci.endreborn;
+package com.endreborn.endreborn;
 
-import com.caranci.endreborn.registry.ModBlocks;
-import com.caranci.endreborn.registry.ModEntities;
-import com.caranci.endreborn.registry.ModItemGroups;
-import com.caranci.endreborn.registry.ModItems;
-import com.caranci.endreborn.registry.ModSounds;
-import com.caranci.endreborn.registry.ModWorldgen;
+import com.endreborn.endreborn.registry.ModBlocks;
+import com.endreborn.endreborn.registry.ModEntities;
+import com.endreborn.endreborn.registry.ModItemGroups;
+import com.endreborn.endreborn.registry.ModItems;
+import com.endreborn.endreborn.registry.ModSounds;
+import com.endreborn.endreborn.registry.ModWorldgen;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;

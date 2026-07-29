@@ -1,7 +1,7 @@
-package com.caranci.endreborn.client;
+package com.endreborn.endreborn.client;
 
-import com.caranci.endreborn.EndReborn;
-import com.caranci.endreborn.entity.VoidMoth;
+import com.endreborn.endreborn.EndReborn;
+import com.endreborn.endreborn.entity.VoidMoth;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;

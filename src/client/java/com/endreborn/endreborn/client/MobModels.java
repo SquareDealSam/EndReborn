@@ -1,4 +1,4 @@
-package com.caranci.endreborn.client;
+package com.endreborn.endreborn.client;
 
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;

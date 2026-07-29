@@ -1,4 +1,4 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.network.syncher.EntityDataAccessor;

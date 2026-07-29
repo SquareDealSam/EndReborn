@@ -1,6 +1,6 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
-import com.caranci.endreborn.registry.ModEntities;
+import com.endreborn.endreborn.registry.ModEntities;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -63,11 +63,11 @@ public class ChorusGuardian extends AbstractBoss {
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.CHORUS_GUARDIAN_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.CHORUS_GUARDIAN_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.CHORUS_GUARDIAN_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.CHORUS_GUARDIAN_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.CHORUS_GUARDIAN_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.CHORUS_GUARDIAN_DEATH; }
 }

@@ -1,6 +1,6 @@
-package com.caranci.endreborn.registry;
+package com.endreborn.endreborn.registry;
 
-import com.caranci.endreborn.EndReborn;
+import com.endreborn.endreborn.EndReborn;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;

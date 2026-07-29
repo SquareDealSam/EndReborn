@@ -1,4 +1,4 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -54,11 +54,11 @@ public class VoidWraith extends Monster {
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.VOID_WRAITH_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.VOID_WRAITH_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.VOID_WRAITH_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.VOID_WRAITH_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.VOID_WRAITH_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.VOID_WRAITH_DEATH; }
 }

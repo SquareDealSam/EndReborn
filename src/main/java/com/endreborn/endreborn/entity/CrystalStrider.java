@@ -1,6 +1,6 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
-import com.caranci.endreborn.registry.ModItems;
+import com.endreborn.endreborn.registry.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -69,11 +69,11 @@ public class CrystalStrider extends PathfinderMob {
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_STRIDER_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_STRIDER_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_STRIDER_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_STRIDER_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_STRIDER_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_STRIDER_DEATH; }
 }

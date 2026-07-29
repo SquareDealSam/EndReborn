@@ -1,4 +1,4 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -44,11 +44,11 @@ public class ObsidianGolem extends Monster {
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.OBSIDIAN_GOLEM_DEATH; }
 }

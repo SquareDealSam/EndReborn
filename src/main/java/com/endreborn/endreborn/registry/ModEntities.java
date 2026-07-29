@@ -1,15 +1,15 @@
-package com.caranci.endreborn.registry;
+package com.endreborn.endreborn.registry;
 
-import com.caranci.endreborn.EndReborn;
-import com.caranci.endreborn.entity.AbyssStalker;
-import com.caranci.endreborn.entity.ChorusGuardian;
-import com.caranci.endreborn.entity.ChorusSprite;
-import com.caranci.endreborn.entity.CrystalSentinel;
-import com.caranci.endreborn.entity.CrystalStrider;
-import com.caranci.endreborn.entity.ObsidianGolem;
-import com.caranci.endreborn.entity.VoidMoth;
-import com.caranci.endreborn.entity.Voidbringer;
-import com.caranci.endreborn.entity.VoidWraith;
+import com.endreborn.endreborn.EndReborn;
+import com.endreborn.endreborn.entity.AbyssStalker;
+import com.endreborn.endreborn.entity.ChorusGuardian;
+import com.endreborn.endreborn.entity.ChorusSprite;
+import com.endreborn.endreborn.entity.CrystalSentinel;
+import com.endreborn.endreborn.entity.CrystalStrider;
+import com.endreborn.endreborn.entity.ObsidianGolem;
+import com.endreborn.endreborn.entity.VoidMoth;
+import com.endreborn.endreborn.entity.Voidbringer;
+import com.endreborn.endreborn.entity.VoidWraith;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

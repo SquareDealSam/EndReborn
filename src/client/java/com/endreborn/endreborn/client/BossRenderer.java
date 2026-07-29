@@ -1,6 +1,6 @@
-package com.caranci.endreborn.client;
+package com.endreborn.endreborn.client;
 
-import com.caranci.endreborn.entity.AbstractBoss;
+import com.endreborn.endreborn.entity.AbstractBoss;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

@@ -1,4 +1,4 @@
-package com.caranci.endreborn.entity;
+package com.endreborn.endreborn.entity;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -51,17 +51,17 @@ public class CrystalSentinel extends Monster implements RangedAttackMob {
             ShulkerBullet bullet = new ShulkerBullet(this.level(), this, target, this.getDirection().getAxis());
             this.level().addFreshEntity(bullet);
             this.level().playSound(null, this.blockPosition(),
-                    com.caranci.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_ZAP,
+                    com.endreborn.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_ZAP,
                     SoundSource.HOSTILE, 1.0F, 1.0F);
         }
     }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_AMBIENT; }
+    protected net.minecraft.sounds.SoundEvent getAmbientSound() { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_AMBIENT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_HURT; }
+    protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_HURT; }
 
     @Override
-    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.caranci.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_DEATH; }
+    protected net.minecraft.sounds.SoundEvent getDeathSound() { return com.endreborn.endreborn.registry.ModSounds.CRYSTAL_SENTINEL_DEATH; }
 }
