@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endreborn:block/chorus_slab"
+    },
+    "type=double": {
+      "model": "endreborn:block/chorus_planks"
+    },
+    "type=top": {
+      "model": "endreborn:block/chorus_slab_top"
+    }
+  }
+}

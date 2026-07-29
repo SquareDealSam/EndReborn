@@ -1,0 +1,54 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "carvers": [],
+  "spawn_costs": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "endreborn:ore_chorus"
+    ],
+    [],
+    [],
+    [
+      "endreborn:chorus_tree_dense"
+    ],
+    []
+  ],
+  "effects": {
+    "sky_color": 2101040,
+    "fog_color": 3152456,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "ambient_sound": "endreborn:ambient.endreborn.chorus_jungle.loop"
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "endreborn:chorus_sprite",
+        "weight": 15,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "endreborn:void_moth",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

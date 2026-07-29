@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "endreborn:chorus_alloy"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "endreborn:chorus_alloy"
+      }
+    ]
+  }
+}

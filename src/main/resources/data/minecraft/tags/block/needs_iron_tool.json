@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "endreborn:chiseled_crystal_stone",
+    "endreborn:chiseled_void_stone",
+    "endreborn:chorus_alloy_block",
+    "endreborn:chorus_ore",
+    "endreborn:crystal_stone",
+    "endreborn:crystal_stone_bricks",
+    "endreborn:crystal_stone_bricks_slab",
+    "endreborn:crystal_stone_bricks_stairs",
+    "endreborn:crystal_stone_bricks_wall",
+    "endreborn:crystal_stone_slab",
+    "endreborn:crystal_stone_stairs",
+    "endreborn:crystal_stone_wall",
+    "endreborn:polished_crystal_stone",
+    "endreborn:polished_crystal_stone_slab",
+    "endreborn:polished_crystal_stone_stairs",
+    "endreborn:polished_crystal_stone_wall",
+    "endreborn:polished_void_stone",
+    "endreborn:polished_void_stone_slab",
+    "endreborn:polished_void_stone_stairs",
+    "endreborn:polished_void_stone_wall",
+    "endreborn:void_stone",
+    "endreborn:void_stone_bricks",
+    "endreborn:void_stone_bricks_slab",
+    "endreborn:void_stone_bricks_stairs",
+    "endreborn:void_stone_bricks_wall",
+    "endreborn:void_stone_slab",
+    "endreborn:void_stone_stairs",
+    "endreborn:void_stone_wall"
+  ]
+}

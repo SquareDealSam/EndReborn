@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "endreborn:chorus_button",
+    "endreborn:chorus_door",
+    "endreborn:chorus_fence",
+    "endreborn:chorus_fence_gate",
+    "endreborn:chorus_leaves",
+    "endreborn:chorus_log",
+    "endreborn:chorus_planks",
+    "endreborn:chorus_pressure_plate",
+    "endreborn:chorus_slab",
+    "endreborn:chorus_stairs",
+    "endreborn:chorus_trapdoor",
+    "endreborn:chorus_wood",
+    "endreborn:stripped_chorus_log",
+    "endreborn:stripped_chorus_wood"
+  ]
+}

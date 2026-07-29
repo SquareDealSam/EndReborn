@@ -1,0 +1,56 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "carvers": [],
+  "spawn_costs": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "endreborn:ore_void_crystal",
+      "endreborn:ore_chorus"
+    ],
+    [],
+    [],
+    [
+      "endreborn:patch_crystal_bloom"
+    ],
+    []
+  ],
+  "effects": {
+    "sky_color": 1187898,
+    "fog_color": 1716050,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "ambient_sound": "endreborn:ambient.endreborn.crystal_highlands.loop"
+  },
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "endreborn:crystal_strider",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "endreborn:crystal_sentinel",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

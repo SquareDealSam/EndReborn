@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "endreborn:chiseled_obsidian",
+    "endreborn:obsidian",
+    "endreborn:obsidian_bricks",
+    "endreborn:obsidian_bricks_slab",
+    "endreborn:obsidian_bricks_stairs",
+    "endreborn:obsidian_bricks_wall",
+    "endreborn:obsidian_slab",
+    "endreborn:obsidian_stairs",
+    "endreborn:obsidian_wall",
+    "endreborn:polished_obsidian",
+    "endreborn:polished_obsidian_slab",
+    "endreborn:polished_obsidian_stairs",
+    "endreborn:polished_obsidian_wall",
+    "endreborn:void_crystal_block",
+    "endreborn:void_crystal_ore"
+  ]
+}

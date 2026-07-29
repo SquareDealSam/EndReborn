@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "endreborn:block/void_stone",
+    "top": "endreborn:block/void_stone",
+    "side": "endreborn:block/void_stone"
+  }
+}

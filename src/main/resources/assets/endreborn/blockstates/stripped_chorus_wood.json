@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "endreborn:block/stripped_chorus_wood"
+    },
+    "axis=z": {
+      "model": "endreborn:block/stripped_chorus_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "endreborn:block/stripped_chorus_wood",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

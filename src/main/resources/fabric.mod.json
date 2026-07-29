@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "endreborn",
+  "version": "${version}",
+  "name": "EndReborn",
+  "description": "A complete overhaul of the End dimension: new biomes, mobs, materials, structures, and sound past the dragon fight.",
+  "authors": [
+    "Caranci Creations"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.caranci.endreborn.EndReborn"
+    ],
+    "client": [
+      "com.caranci.endreborn.EndRebornClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

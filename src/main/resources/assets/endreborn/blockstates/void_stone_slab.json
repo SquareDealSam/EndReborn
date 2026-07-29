@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endreborn:block/void_stone_slab"
+    },
+    "type=double": {
+      "model": "endreborn:block/void_stone"
+    },
+    "type=top": {
+      "model": "endreborn:block/void_stone_slab_top"
+    }
+  }
+}

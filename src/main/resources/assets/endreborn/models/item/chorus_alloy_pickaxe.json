@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "endreborn:item/chorus_alloy_pickaxe"
+  }
+}

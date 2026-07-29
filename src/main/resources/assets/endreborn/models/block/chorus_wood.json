@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "endreborn:block/chorus_log",
+    "end": "endreborn:block/chorus_log"
+  }
+}

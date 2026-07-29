@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "endreborn:block/stripped_chorus_log"
+    },
+    "axis=z": {
+      "model": "endreborn:block/stripped_chorus_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "endreborn:block/stripped_chorus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

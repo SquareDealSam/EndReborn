@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "endreborn:block/crystal_stone",
+    "top": "endreborn:block/crystal_stone",
+    "side": "endreborn:block/crystal_stone"
+  }
+}
