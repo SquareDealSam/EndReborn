@@ -21,12 +21,13 @@
 ---
 
 ## Projects / Larger Goals
-### Project Alpha
+### Project A
 - [ ] Milestone 1
 - [ ] Milestone 2
 
-### Project Beta
+### Project B
 - [ ] Milestone 1
+- [ ] Milestone 2
 
 ---
 
