@@ -5,17 +5,17 @@
   "name": "EndReborn",
   "description": "A complete overhaul of the End dimension: new biomes, mobs, materials, structures, and sound past the dragon fight.",
   "authors": [
-    "Caranci Creations"
+    "EndReborn Contributors"
   ],
   "contact": {},
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.caranci.endreborn.EndReborn"
+      "com.endreborn.endreborn.EndReborn"
     ],
     "client": [
-      "com.caranci.endreborn.EndRebornClient"
+      "com.endreborn.endreborn.EndRebornClient"
     ]
   },
   "depends": {
