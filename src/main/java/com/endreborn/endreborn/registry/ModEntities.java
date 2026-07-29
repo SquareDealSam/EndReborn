@@ -17,7 +17,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 
 /** Entity-type registration for EndReborn mobs. */
 public final class ModEntities {
@@ -62,6 +67,38 @@ public final class ModEntities {
         FabricDefaultAttributeRegistry.register(CRYSTAL_SENTINEL, CrystalSentinel.createAttributes());
         FabricDefaultAttributeRegistry.register(CHORUS_GUARDIAN, ChorusGuardian.createAttributes());
         FabricDefaultAttributeRegistry.register(VOIDBRINGER, Voidbringer.createAttributes());
+
+        registerSpawnPlacements();
+
         EndReborn.LOGGER.info("[EndReborn] Registered 7 mobs + 2 bosses.");
+    }
+
+    /**
+     * Registers the spawn placement rules that gate where and when each mob may
+     * naturally spawn. The two bosses are omitted on purpose — they are placed by
+     * structures / summoned, never by the natural mob-spawning loop.
+     */
+    private static void registerSpawnPlacements() {
+        // Ambient flyers: drift through the air, so no ground restriction and any light.
+        SpawnPlacements.register(VOID_MOTH, SpawnPlacementTypes.NO_RESTRICTIONS,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+        SpawnPlacements.register(CHORUS_SPRITE, SpawnPlacementTypes.NO_RESTRICTIONS,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+
+        // Ground creature: needs a solid block underfoot.
+        SpawnPlacements.register(CRYSTAL_STRIDER, SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+
+        // Ground monsters: the End is hostile territory, so spawn regardless of light.
+        SpawnPlacements.register(OBSIDIAN_GOLEM, SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
+        SpawnPlacements.register(ABYSS_STALKER, SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
+        SpawnPlacements.register(CRYSTAL_SENTINEL, SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
+
+        // Flying monster: haunts the open air of the Barrens and the Abyss.
+        SpawnPlacements.register(VOID_WRAITH, SpawnPlacementTypes.NO_RESTRICTIONS,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
     }
 }
