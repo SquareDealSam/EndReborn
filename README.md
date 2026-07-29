@@ -4,7 +4,7 @@ A **Fabric mod for Minecraft 26.2** that overhauls the **End dimension** beyond 
 fight — new biomes, mobs, bosses, materials, structures, and a full set of custom sound
 effects, built as a distinct post-dragon progression track.
 
-> ⚠️ **Early / work-in-progress (v1.1).** It builds and runs, but textures, biome variety,
+> ⚠️ **Early / work-in-progress (v0.1.0).** It builds and runs, but textures, biome variety,
 > and the boss encounters are actively being overhauled. Expect rough edges — feedback welcome.
 
 ## Features
