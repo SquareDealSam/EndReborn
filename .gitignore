@@ -19,6 +19,7 @@ run/
 .classpath
 .project
 bin/
+.claude/
 
 # OS
 .DS_Store
