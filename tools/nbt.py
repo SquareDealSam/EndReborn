@@ -12,7 +12,8 @@ import struct
 DATA_VERSION = 4903  # Minecraft 26.2
 
 TYPEID = {"byte": 1, "short": 2, "int": 3, "long": 4, "float": 5,
-          "double": 6, "string": 8, "list": 9, "compound": 10, "int_array": 11}
+          "double": 6, "string": 8, "list": 9, "compound": 10, "int_array": 11,
+          "long_array": 12}
 
 
 def _str(s):
@@ -38,6 +39,12 @@ def _payload(f, node):
         f.write(struct.pack(">i", len(node[1])))
         for v in node[1]:
             f.write(struct.pack(">i", v))
+    elif t == "long_array":
+        f.write(struct.pack(">i", len(node[1])))
+        for v in node[1]:
+            if v >= 2**63:
+                v -= 2**64            # NBT longs are signed
+            f.write(struct.pack(">q", v))
     elif t == "list":
         _, subtype, items = node
         f.write(struct.pack(">b", TYPEID[subtype]))
