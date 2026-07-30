@@ -4,7 +4,7 @@
 - [ ] Finish textures
 - [ ] Biomes
 - [ ] Mob logic
-
+- [ ] Structures
 ---
 <!--
 ## Today / Active Tasks
