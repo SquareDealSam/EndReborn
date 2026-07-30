@@ -21,7 +21,8 @@ ITEM_DEFS = os.path.join(RES, "assets", "endreborn", "items")
 
 def main():
     os.makedirs(ITEM_DEFS, exist_ok=True)
-    names = sorted(f[:-5] for f in os.listdir(ITEM_MODELS) if f.endswith(".json"))
+    names = sorted(f[:-5] for f in os.listdir(ITEM_MODELS)
+                   if f.endswith(".json") and " " not in f)  # skip iCloud "name 2.json" dupes
     for name in names:
         obj = {"model": {"type": "minecraft:model", "model": f"endreborn:item/{name}"}}
         with open(os.path.join(ITEM_DEFS, name + ".json"), "w") as fh:

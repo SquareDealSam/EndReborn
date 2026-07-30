@@ -27,3 +27,6 @@ bin/
 # Python
 __pycache__/
 *.pyc
+
+# iCloud sync duplicates ("name 2.json")
+* [0-9].*
