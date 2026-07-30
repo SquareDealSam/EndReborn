@@ -31,10 +31,8 @@ public class EndReborn implements ModInitializer {
         ModEntities.register();
         ModWorldgen.register();
 
-        // Wired in over later stages:
-        //   ModSounds.register();
-        //   ModWorldgen.register();
-        //   ModStructures.register();
-        //   EndRebornConfig.load();
+        // Structures are fully data-driven (minecraft:jigsaw + structure_set +
+        // template_pool under data/endreborn/worldgen), so they need no Java
+        // registration here. Config loading is the remaining future stage.
     }
 }
