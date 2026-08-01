@@ -12,8 +12,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from nbt import Structure
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-WG = "data/endreborn/worldgen"
-E = "endreborn"
+WG = "data/voidweaver/worldgen"
+E = "voidweaver"
 
 
 def writej(rel, obj):

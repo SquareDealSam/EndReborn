@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "voidweaver:item/chorus_alloy_shovel"
+  }
+}

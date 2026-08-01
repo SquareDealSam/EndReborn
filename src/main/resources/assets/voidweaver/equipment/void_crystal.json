@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "voidweaver:void_crystal"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "voidweaver:void_crystal"
+      }
+    ]
+  }
+}

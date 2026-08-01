@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "voidweaver:chorus_alloy"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "voidweaver:chorus_alloy"
+      }
+    ]
+  }
+}

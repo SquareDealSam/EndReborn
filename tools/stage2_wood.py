@@ -14,7 +14,7 @@ import mcjson as J
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-TEX = os.path.join(RES, "assets", "endreborn", "textures")
+TEX = os.path.join(RES, "assets", "voidweaver", "textures")
 PLANK = "chorus_planks"
 WOOD = "#7a4a86"
 
@@ -40,12 +40,12 @@ def title(name):
 
 
 def loot_door(name):
-    return (f"data/endreborn/loot_table/blocks/{name}.json", {
+    return (f"data/voidweaver/loot_table/blocks/{name}.json", {
         "type": "minecraft:block",
-        "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"endreborn:{name}"}],
+        "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"voidweaver:{name}"}],
                    "conditions": [{"condition": "minecraft:survives_explosion"},
                                   {"condition": "minecraft:block_state_property",
-                                   "block": f"endreborn:{name}",
+                                   "block": f"voidweaver:{name}",
                                    "properties": {"half": "lower"}}]}]})
 
 
@@ -61,7 +61,7 @@ def main():
                      "to": [16, 16, 16], "origin": [8, 8, 8]}], "texture": name, "faces": True})
         print(f"  tab+texture -> {name}")
 
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
 
     def emit(files, loot=None):
@@ -88,15 +88,15 @@ def main():
                    "chorus_fence_gate", "chorus_door", "chorus_trapdoor",
                    "chorus_pressure_plate", "chorus_button", "chorus_leaves"]
     for name in wood_blocks:
-        lang[f"block.endreborn.{name}"] = title(name)
-    lang["item.endreborn.chorus_door"] = "Chorus Door"
+        lang[f"block.voidweaver.{name}"] = title(name)
+    lang["item.voidweaver.chorus_door"] = "Chorus Door"
 
     # merge axe-mineable tag
     axe_path = "data/minecraft/tags/block/mineable/axe.json"
     axe_full = os.path.join(RES, axe_path)
     axe = json.load(open(axe_full)) if os.path.exists(axe_full) else {"replace": False, "values": []}
     for name in wood_blocks:
-        v = f"endreborn:{name}"
+        v = f"voidweaver:{name}"
         if v not in axe["values"]:
             axe["values"].append(v)
     writej(axe_path, {"replace": False, "values": sorted(axe["values"])})

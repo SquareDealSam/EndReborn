@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidweaver:block/obsidian_slab"
+    },
+    "type=double": {
+      "model": "voidweaver:block/obsidian"
+    },
+    "type=top": {
+      "model": "voidweaver:block/obsidian_slab_top"
+    }
+  }
+}

@@ -14,9 +14,9 @@ import textures as T
 import mcjson as J
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-TEX = os.path.join(RES, "assets", "endreborn", "textures", "block")
-WG = "data/endreborn/worldgen"
-E = "endreborn"
+TEX = os.path.join(RES, "assets", "voidweaver", "textures", "block")
+WG = "data/voidweaver/worldgen"
+E = "voidweaver"
 
 
 def writej(rel, obj):
@@ -40,7 +40,7 @@ PLANTS = {  # name -> (image, light)
 
 
 def build_blocks():
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
     for name, img in GROUND.items():
         T.save(img, os.path.join(TEX, name + ".png"))

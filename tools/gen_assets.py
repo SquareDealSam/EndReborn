@@ -9,8 +9,8 @@ import json
 import os
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-A = os.path.join(ROOT, "assets", "endreborn")
-D = os.path.join(ROOT, "data", "endreborn")
+A = os.path.join(ROOT, "assets", "voidweaver")
+D = os.path.join(ROOT, "data", "voidweaver")
 
 # name -> display name. Blocks with a full-cube model use "cube_all".
 CUBE_BLOCKS = {
@@ -36,25 +36,25 @@ def w(path, obj):
 
 
 def main():
-    lang = {"itemGroup.endreborn": "EndReborn"}
+    lang = {"itemGroup.voidweaver": "EndReborn"}
 
     for name, disp in CUBE_BLOCKS.items():
-        tex = f"endreborn:block/{name}"
+        tex = f"voidweaver:block/{name}"
         w(os.path.join(A, "blockstates", f"{name}.json"),
-          {"variants": {"": {"model": f"endreborn:block/{name}"}}})
+          {"variants": {"": {"model": f"voidweaver:block/{name}"}}})
         w(os.path.join(A, "models", "block", f"{name}.json"),
           {"parent": "minecraft:block/cube_all", "textures": {"all": tex}})
         w(os.path.join(A, "models", "item", f"{name}.json"),
-          {"parent": f"endreborn:block/{name}"})
+          {"parent": f"voidweaver:block/{name}"})
         w(os.path.join(D, "loot_table", "blocks", f"{name}.json"),
           self_drop(name))
-        lang[f"block.endreborn.{name}"] = disp
+        lang[f"block.voidweaver.{name}"] = disp
 
     for name, disp in ITEMS.items():
         w(os.path.join(A, "models", "item", f"{name}.json"),
           {"parent": "minecraft:item/generated",
-           "textures": {"layer0": f"endreborn:item/{name}"}})
-        lang[f"item.endreborn.{name}"] = disp
+           "textures": {"layer0": f"voidweaver:item/{name}"}})
+        lang[f"item.voidweaver.{name}"] = disp
 
     w(os.path.join(A, "lang", "en_us.json"), lang)
     print(f"wrote {len(CUBE_BLOCKS)} block asset sets + {len(ITEMS)} item models + lang")
@@ -65,7 +65,7 @@ def self_drop(name):
         "type": "minecraft:block",
         "pools": [{
             "rolls": 1,
-            "entries": [{"type": "minecraft:item", "name": f"endreborn:{name}"}],
+            "entries": [{"type": "minecraft:item", "name": f"voidweaver:{name}"}],
             "conditions": [{"condition": "minecraft:survives_explosion"}],
         }],
     }

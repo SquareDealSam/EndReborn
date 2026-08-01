@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "endreborn:block/obsidian",
-    "top": "endreborn:block/obsidian",
-    "side": "endreborn:block/obsidian"
-  }
-}

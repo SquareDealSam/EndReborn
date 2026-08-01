@@ -64,7 +64,7 @@ class BB:
             "jsonrpc": "2.0", "id": self._id, "method": "initialize",
             "params": {
                 "protocolVersion": "2025-06-18", "capabilities": {},
-                "clientInfo": {"name": "endreborn-bb", "version": "1.0"},
+                "clientInfo": {"name": "voidweaver-bb", "version": "1.0"},
             },
         })
         # initialized notification (no id, no response body expected)

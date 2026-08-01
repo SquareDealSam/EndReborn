@@ -17,11 +17,11 @@ RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
 
 def main():
     img = T.entity_moth("#3a2d5c", "#7a4fb0", "void_moth")
-    T.save(img, os.path.join(RES, "assets", "endreborn", "textures", "entity", "void_moth.png"))
+    T.save(img, os.path.join(RES, "assets", "voidweaver", "textures", "entity", "void_moth.png"))
 
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
-    lang["entity.endreborn.void_moth"] = "Void Moth"
+    lang["entity.voidweaver.void_moth"] = "Void Moth"
     json.dump(lang, open(lang_path, "w"), indent=2)
     print("seeded void_moth texture + lang")
 

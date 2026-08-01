@@ -12,7 +12,7 @@ import textures as T
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources",
-                   "assets", "endreborn", "textures")
+                   "assets", "voidweaver", "textures")
 
 # (dest_subdir, name, PIL image, is_block_cube)
 def catalog():

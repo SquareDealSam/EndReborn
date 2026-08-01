@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-TEXROOT = os.path.join(RES, "assets", "endreborn", "textures")
+TEXROOT = os.path.join(RES, "assets", "voidweaver", "textures")
 POLL = 2.5
 
 
@@ -77,19 +77,26 @@ def main():
             for name in names:
                 if not name:
                     continue
+                # forgive a ".png" suffix accidentally typed into the texture name
+                key = name[:-4] if name.lower().endswith(".png") else name
                 png = png_of(bb.call("get_texture", {"texture": name}))
                 if not png:
                     continue
                 h = sha(png)
-                if hashes.get(name) == h:
+                if hashes.get(key) == h:
                     continue
-                path = index.get(name) or os.path.join(TEXROOT, "block", name + ".png")
+                path = index.get(key) or os.path.join(TEXROOT, "block", key + ".png")
                 os.makedirs(os.path.dirname(path), exist_ok=True)
                 open(path, "wb").write(png)
-                index[name] = path
-                hashes[name] = h
+                # also mirror into the dev runtime copy so F3+T reloads it live
+                build_path = path.replace("/src/main/resources/", "/build/resources/main/")
+                if build_path != path:
+                    os.makedirs(os.path.dirname(build_path), exist_ok=True)
+                    open(build_path, "wb").write(png)
+                index[key] = path
+                hashes[key] = h
                 rel = os.path.relpath(path, RES)
-                print(f"[live_sync] updated {rel}", flush=True)
+                print(f"[live_sync] updated {rel} (+ build)", flush=True)
             misses = 0
         except Exception as e:
             misses += 1

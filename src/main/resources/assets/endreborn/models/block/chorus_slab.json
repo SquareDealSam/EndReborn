@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "endreborn:block/chorus_planks",
-    "top": "endreborn:block/chorus_planks",
-    "side": "endreborn:block/chorus_planks"
-  }
-}

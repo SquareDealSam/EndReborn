@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "voidweaver:block/chorus_log"
+    },
+    "axis=z": {
+      "model": "voidweaver:block/chorus_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "voidweaver:block/chorus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

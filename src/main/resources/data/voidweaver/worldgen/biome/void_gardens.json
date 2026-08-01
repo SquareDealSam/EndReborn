@@ -1,0 +1,64 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "carvers": [],
+  "spawn_costs": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "voidweaver:ore_chorus"
+    ],
+    [],
+    [],
+    [
+      "voidweaver:garden_patch",
+      "voidweaver:scatter_glowstalk",
+      "voidweaver:scatter_glow_fungus",
+      "voidweaver:chorus_tree",
+      "voidweaver:patch_void_bloom"
+    ],
+    []
+  ],
+  "effects": {
+    "sky_color": 1707822,
+    "fog_color": 2759232,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "probability": 0.006,
+      "options": {
+        "type": "minecraft:end_rod"
+      }
+    },
+    "ambient_sound": "voidweaver:ambient.voidweaver.void_gardens.loop"
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "voidweaver:void_moth",
+        "weight": 15,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "voidweaver:chorus_sprite",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

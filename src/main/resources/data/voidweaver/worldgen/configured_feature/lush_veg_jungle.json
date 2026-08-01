@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "voidweaver:void_fern"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "voidweaver:giant_bloom"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "voidweaver:glowstalk"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "voidweaver:glow_fungus"
+          }
+        }
+      ]
+    }
+  }
+}

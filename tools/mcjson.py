@@ -3,13 +3,13 @@
 
 Each function returns (list of (relpath_under_assets_or_data, dict)) describing
 the files to write for a block/item, mirroring what vanilla datagen emits. `NS`
-is the mod namespace. Textures are referenced as endreborn:block/<tex>.
+is the mod namespace. Textures are referenced as voidweaver:block/<tex>.
 """
 import json
 import os
 import zipfile
 
-NS = "endreborn"
+NS = "voidweaver"
 CLIENT_JAR = os.path.expanduser(
     "~/.gradle/caches/fabric-loom/26.2/minecraft-client.jar")
 

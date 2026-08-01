@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidweaver:block/polished_crystal_stone_slab"
+    },
+    "type=double": {
+      "model": "voidweaver:block/polished_crystal_stone"
+    },
+    "type=top": {
+      "model": "voidweaver:block/polished_crystal_stone_slab_top"
+    }
+  }
+}

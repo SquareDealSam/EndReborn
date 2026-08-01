@@ -1,0 +1,362 @@
+{
+  "entity.voidweaver.void_moth.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_moth/ambient1",
+      "voidweaver:mob/void_moth/ambient2"
+    ]
+  },
+  "entity.voidweaver.void_moth.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_moth/hurt1",
+      "voidweaver:mob/void_moth/hurt2"
+    ]
+  },
+  "entity.voidweaver.void_moth.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_moth/death"
+    ]
+  },
+  "entity.voidweaver.chorus_sprite.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_sprite/ambient1",
+      "voidweaver:mob/chorus_sprite/ambient2"
+    ]
+  },
+  "entity.voidweaver.chorus_sprite.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_sprite/hurt1",
+      "voidweaver:mob/chorus_sprite/hurt2"
+    ]
+  },
+  "entity.voidweaver.chorus_sprite.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_sprite/death"
+    ]
+  },
+  "entity.voidweaver.crystal_strider.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_strider/ambient1",
+      "voidweaver:mob/crystal_strider/ambient2"
+    ]
+  },
+  "entity.voidweaver.crystal_strider.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_strider/hurt1",
+      "voidweaver:mob/crystal_strider/hurt2"
+    ]
+  },
+  "entity.voidweaver.crystal_strider.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_strider/death"
+    ]
+  },
+  "entity.voidweaver.void_wraith.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_wraith/ambient1",
+      "voidweaver:mob/void_wraith/ambient2"
+    ]
+  },
+  "entity.voidweaver.void_wraith.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_wraith/hurt1",
+      "voidweaver:mob/void_wraith/hurt2"
+    ]
+  },
+  "entity.voidweaver.void_wraith.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/void_wraith/death"
+    ]
+  },
+  "entity.voidweaver.obsidian_golem.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/obsidian_golem/ambient1",
+      "voidweaver:mob/obsidian_golem/ambient2"
+    ]
+  },
+  "entity.voidweaver.obsidian_golem.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/obsidian_golem/hurt1",
+      "voidweaver:mob/obsidian_golem/hurt2"
+    ]
+  },
+  "entity.voidweaver.obsidian_golem.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/obsidian_golem/death"
+    ]
+  },
+  "entity.voidweaver.abyss_stalker.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/abyss_stalker/ambient1",
+      "voidweaver:mob/abyss_stalker/ambient2"
+    ]
+  },
+  "entity.voidweaver.abyss_stalker.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/abyss_stalker/hurt1",
+      "voidweaver:mob/abyss_stalker/hurt2"
+    ]
+  },
+  "entity.voidweaver.abyss_stalker.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/abyss_stalker/death"
+    ]
+  },
+  "entity.voidweaver.crystal_sentinel.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_sentinel/ambient1",
+      "voidweaver:mob/crystal_sentinel/ambient2"
+    ]
+  },
+  "entity.voidweaver.crystal_sentinel.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_sentinel/hurt1",
+      "voidweaver:mob/crystal_sentinel/hurt2"
+    ]
+  },
+  "entity.voidweaver.crystal_sentinel.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/crystal_sentinel/death"
+    ]
+  },
+  "entity.voidweaver.crystal_sentinel.zap": {
+    "category": "hostile",
+    "sounds": [
+      "voidweaver:mob/crystal_sentinel/zap1",
+      "voidweaver:mob/crystal_sentinel/zap2"
+    ]
+  },
+  "entity.voidweaver.chorus_guardian.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_guardian/ambient1",
+      "voidweaver:mob/chorus_guardian/ambient2"
+    ]
+  },
+  "entity.voidweaver.chorus_guardian.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_guardian/hurt1",
+      "voidweaver:mob/chorus_guardian/hurt2"
+    ]
+  },
+  "entity.voidweaver.chorus_guardian.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/chorus_guardian/death"
+    ]
+  },
+  "entity.voidweaver.chorus_guardian.roar": {
+    "category": "hostile",
+    "sounds": [
+      "voidweaver:mob/chorus_guardian/roar"
+    ]
+  },
+  "entity.voidweaver.voidbringer.ambient": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/voidbringer/ambient1",
+      "voidweaver:mob/voidbringer/ambient2"
+    ]
+  },
+  "entity.voidweaver.voidbringer.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/voidbringer/hurt1",
+      "voidweaver:mob/voidbringer/hurt2"
+    ]
+  },
+  "entity.voidweaver.voidbringer.death": {
+    "category": "neutral",
+    "sounds": [
+      "voidweaver:mob/voidbringer/death"
+    ]
+  },
+  "entity.voidweaver.voidbringer.roar": {
+    "category": "hostile",
+    "sounds": [
+      "voidweaver:mob/voidbringer/roar1",
+      "voidweaver:mob/voidbringer/roar2"
+    ]
+  },
+  "block.voidweaver.void_stone.break": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/void_stone/break"
+    ]
+  },
+  "block.voidweaver.void_stone.step": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/void_stone/step1",
+      "voidweaver:block/void_stone/step2"
+    ]
+  },
+  "block.voidweaver.void_stone.place": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/void_stone/place"
+    ]
+  },
+  "block.voidweaver.void_stone.hit": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/void_stone/hit"
+    ]
+  },
+  "block.voidweaver.void_stone.fall": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/void_stone/fall"
+    ]
+  },
+  "block.voidweaver.crystal.break": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/crystal/break"
+    ]
+  },
+  "block.voidweaver.crystal.step": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/crystal/step1",
+      "voidweaver:block/crystal/step2"
+    ]
+  },
+  "block.voidweaver.crystal.place": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/crystal/place"
+    ]
+  },
+  "block.voidweaver.crystal.hit": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/crystal/hit"
+    ]
+  },
+  "block.voidweaver.crystal.fall": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/crystal/fall"
+    ]
+  },
+  "block.voidweaver.obsidian.break": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/obsidian/break"
+    ]
+  },
+  "block.voidweaver.obsidian.step": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/obsidian/step1",
+      "voidweaver:block/obsidian/step2"
+    ]
+  },
+  "block.voidweaver.obsidian.place": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/obsidian/place"
+    ]
+  },
+  "block.voidweaver.obsidian.hit": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/obsidian/hit"
+    ]
+  },
+  "block.voidweaver.obsidian.fall": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/obsidian/fall"
+    ]
+  },
+  "block.voidweaver.chorus_wood.break": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/chorus_wood/break"
+    ]
+  },
+  "block.voidweaver.chorus_wood.step": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/chorus_wood/step1",
+      "voidweaver:block/chorus_wood/step2"
+    ]
+  },
+  "block.voidweaver.chorus_wood.place": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/chorus_wood/place"
+    ]
+  },
+  "block.voidweaver.chorus_wood.hit": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/chorus_wood/hit"
+    ]
+  },
+  "block.voidweaver.chorus_wood.fall": {
+    "category": "block",
+    "sounds": [
+      "voidweaver:block/chorus_wood/fall"
+    ]
+  },
+  "ambient.voidweaver.shattered_barrens.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/shattered_barrens"
+    ]
+  },
+  "ambient.voidweaver.void_gardens.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/void_gardens"
+    ]
+  },
+  "ambient.voidweaver.obsidian_wastes.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/obsidian_wastes"
+    ]
+  },
+  "ambient.voidweaver.crystal_highlands.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/crystal_highlands"
+    ]
+  },
+  "ambient.voidweaver.endless_abyss.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/endless_abyss"
+    ]
+  },
+  "ambient.voidweaver.chorus_jungle.loop": {
+    "category": "ambient",
+    "sounds": [
+      "voidweaver:ambient/chorus_jungle"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidweaver:block/void_stone_slab"
+    },
+    "type=double": {
+      "model": "voidweaver:block/void_stone"
+    },
+    "type=top": {
+      "model": "voidweaver:block/void_stone_slab_top"
+    }
+  }
+}

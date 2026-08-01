@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "voidweaver:crystal_spire",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 12,
+    "salt": 74100002
+  }
+}

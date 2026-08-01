@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "endreborn:block/chiseled_crystal_stone"
-  }
-}

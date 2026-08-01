@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "voidweaver:block/polished_crystal_stone"
+  }
+}

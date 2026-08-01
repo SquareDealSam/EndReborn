@@ -1,0 +1,58 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "carvers": [],
+  "spawn_costs": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "voidweaver:ore_void_crystal",
+      "voidweaver:ore_chorus"
+    ],
+    [],
+    [],
+    [
+      "voidweaver:scatter_crystal_flower",
+      "voidweaver:patch_crystal_bloom",
+      "voidweaver:scatter_glowstalk"
+    ],
+    []
+  ],
+  "effects": {
+    "sky_color": 1187898,
+    "fog_color": 1716050,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "ambient_sound": "voidweaver:ambient.voidweaver.crystal_highlands.loop"
+  },
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "voidweaver:crystal_strider",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "voidweaver:crystal_sentinel",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "endreborn:block/void_stone_bricks",
-    "top": "endreborn:block/void_stone_bricks",
-    "side": "endreborn:block/void_stone_bricks"
-  }
-}

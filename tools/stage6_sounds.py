@@ -17,9 +17,9 @@ import soundfile as sf
 import sfx as S
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-SND = os.path.join(RES, "assets", "endreborn", "sounds")
+SND = os.path.join(RES, "assets", "voidweaver", "sounds")
 JAVA = os.path.join(os.path.dirname(__file__), "..", "src", "main", "java",
-                    "com", "caranci", "endreborn", "registry", "ModSounds.java")
+                    "com", "caranci", "voidweaver", "registry", "ModSounds.java")
 
 CATALOG = []   # each: dict(event, field, category, files=[(relpath, ndarray)])
 SOUNDTYPES = []  # each: (field, material) -> uses <MAT>_BREAK/STEP/PLACE/HIT/FALL
@@ -30,21 +30,21 @@ def add(event, field, category, files):
 
 
 def field_of(event):
-    return event.replace("endreborn.", "").replace("entity.", "").replace("block.", "") \
+    return event.replace("voidweaver.", "").replace("entity.", "").replace("block.", "") \
                 .replace("ambient.", "amb.").replace(".", "_").upper()
 
 
 # ---------------- MOB SOUNDS ----------------
 def mob(name, ambient, hurt, death, extra=None):
     base = f"mob/{name}"
-    add(f"entity.endreborn.{name}.ambient", f"{name}_AMBIENT".upper(), "neutral",
+    add(f"entity.voidweaver.{name}.ambient", f"{name}_AMBIENT".upper(), "neutral",
         [(f"{base}/ambient{i+1}", a) for i, a in enumerate(ambient)])
-    add(f"entity.endreborn.{name}.hurt", f"{name}_HURT".upper(), "neutral",
+    add(f"entity.voidweaver.{name}.hurt", f"{name}_HURT".upper(), "neutral",
         [(f"{base}/hurt{i+1}", a) for i, a in enumerate(hurt)])
-    add(f"entity.endreborn.{name}.death", f"{name}_DEATH".upper(), "neutral",
+    add(f"entity.voidweaver.{name}.death", f"{name}_DEATH".upper(), "neutral",
         [(f"{base}/death", death)])
     for evt, arrs in (extra or {}).items():
-        add(f"entity.endreborn.{name}.{evt}", f"{name}_{evt}".upper(), "hostile",
+        add(f"entity.voidweaver.{name}.{evt}", f"{name}_{evt}".upper(), "hostile",
             [(f"{base}/{evt}{i+1}" if len(arrs) > 1 else f"{base}/{evt}", a) for i, a in enumerate(arrs)])
 
 
@@ -113,15 +113,15 @@ def build_blocks():
     }
     for mat, color in mats.items():
         base = f"block/{mat}"
-        add(f"block.endreborn.{mat}.break", f"{mat}_BREAK".upper(), "block",
+        add(f"block.voidweaver.{mat}.break", f"{mat}_BREAK".upper(), "block",
             [(f"{base}/break", m(S.dig(color, 0.28, 1)))])
-        add(f"block.endreborn.{mat}.step", f"{mat}_STEP".upper(), "block",
+        add(f"block.voidweaver.{mat}.step", f"{mat}_STEP".upper(), "block",
             [(f"{base}/step{i+1}", m(S.dig(color, 0.13, s) * 0.5)) for i, s in enumerate((2, 3))])
-        add(f"block.endreborn.{mat}.place", f"{mat}_PLACE".upper(), "block",
+        add(f"block.voidweaver.{mat}.place", f"{mat}_PLACE".upper(), "block",
             [(f"{base}/place", m(S.dig(color, 0.22, 4) * 0.8))])
-        add(f"block.endreborn.{mat}.hit", f"{mat}_HIT".upper(), "block",
+        add(f"block.voidweaver.{mat}.hit", f"{mat}_HIT".upper(), "block",
             [(f"{base}/hit", m(S.dig(color, 0.10, 5) * 0.5))])
-        add(f"block.endreborn.{mat}.fall", f"{mat}_FALL".upper(), "block",
+        add(f"block.voidweaver.{mat}.fall", f"{mat}_FALL".upper(), "block",
             [(f"{base}/fall", m(S.thud(120 if color != "wood" else 160, 0.2, 6, noise=0.3)))])
         SOUNDTYPES.append((f"{mat}_SOUNDS".upper(), mat.upper()))
 
@@ -147,7 +147,7 @@ def ambient_loop(kind, seed):
 def build_ambient():
     for b in ("shattered_barrens", "void_gardens", "obsidian_wastes",
               "crystal_highlands", "endless_abyss", "chorus_jungle"):
-        add(f"ambient.endreborn.{b}.loop", f"AMBIENT_{b}".upper(), "ambient",
+        add(f"ambient.voidweaver.{b}.loop", f"AMBIENT_{b}".upper(), "ambient",
             [(f"ambient/{b}", ambient_loop(b, hash(b) % 1000))])
 
 
@@ -167,15 +167,15 @@ def write_sounds_json():
     obj = {}
     for e in CATALOG:
         obj[e["event"]] = {"category": e["category"],
-                           "sounds": [f"endreborn:{rel}" for rel, _ in e["files"]]}
-    p = os.path.join(RES, "assets", "endreborn", "sounds.json")
+                           "sounds": [f"voidweaver:{rel}" for rel, _ in e["files"]]}
+    p = os.path.join(RES, "assets", "voidweaver", "sounds.json")
     json.dump(obj, open(p, "w"), indent=2)
 
 
 def write_mod_sounds_java():
     lines = [
-        "package com.caranci.endreborn.registry;", "",
-        "import com.caranci.endreborn.EndReborn;",
+        "package com.caranci.voidweaver.registry;", "",
+        "import com.caranci.voidweaver.EndReborn;",
         "import net.minecraft.core.Registry;",
         "import net.minecraft.core.registries.BuiltInRegistries;",
         "import net.minecraft.resources.Identifier;",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stage 4 - worldgen: 6 End biomes + ore/tree/flora features, and 2 flora blocks.
 
-Emits data/endreborn/worldgen/{biome,configured_feature,placed_feature}/*.json plus
+Emits data/voidweaver/worldgen/{biome,configured_feature,placed_feature}/*.json plus
 flora textures/models/loot/lang. Biomes are slotted into the End outer islands by
 ModWorldgen (TheEndBiomes). Run:  python tools/stage4_worldgen.py
 """
@@ -15,7 +15,7 @@ import mcjson as J
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-WG = "data/endreborn/worldgen"
+WG = "data/voidweaver/worldgen"
 
 
 def writej(rel, obj):
@@ -40,7 +40,7 @@ def ore_cf(name, block, size):
 
 def ore_pf(name, cf, count, ymin=0, ymax=120):
     writej(f"{WG}/placed_feature/{name}.json", {
-        "feature": f"endreborn:{cf}",
+        "feature": f"voidweaver:{cf}",
         "placement": [
             {"type": "minecraft:count", "count": count},
             {"type": "minecraft:in_square"},
@@ -51,7 +51,7 @@ def ore_pf(name, cf, count, ymin=0, ymax=120):
 
 def surface_pf(name, cf, count):
     writej(f"{WG}/placed_feature/{name}.json", {
-        "feature": f"endreborn:{cf}",
+        "feature": f"voidweaver:{cf}",
         "placement": [
             {"type": "minecraft:count", "count": count},
             {"type": "minecraft:in_square"},
@@ -68,9 +68,9 @@ def chorus_tree_cf():
             "trunk_placer": {"type": "minecraft:straight_trunk_placer",
                              "base_height": 5, "height_rand_a": 3, "height_rand_b": 0},
             "trunk_provider": {"type": "minecraft:simple_state_provider",
-                               "state": {"Name": "endreborn:chorus_log", "Properties": {"axis": "y"}}},
+                               "state": {"Name": "voidweaver:chorus_log", "Properties": {"axis": "y"}}},
             "foliage_placer": {"type": "minecraft:blob_foliage_placer", "height": 3, "offset": 0, "radius": 2},
-            "foliage_provider": {"type": "minecraft:simple_state_provider", "state": {"Name": "endreborn:chorus_leaves"}},
+            "foliage_provider": {"type": "minecraft:simple_state_provider", "state": {"Name": "voidweaver:chorus_leaves"}},
             "below_trunk_provider": {"type": "minecraft:simple_state_provider", "state": {"Name": "minecraft:end_stone"}},
             "decorators": []}})
 
@@ -84,7 +84,7 @@ def patch_cf(name, block):
 
 def flora_pf(name, cf, count):
     writej(f"{WG}/placed_feature/{name}.json", {
-        "feature": f"endreborn:{cf}",
+        "feature": f"voidweaver:{cf}",
         "placement": [
             {"type": "minecraft:count", "count": count},
             {"type": "minecraft:in_square"},
@@ -96,12 +96,12 @@ def flora_pf(name, cf, count):
 
 # ---------- features ----------
 def build_features():
-    ore_cf("ore_chorus", "endreborn:chorus_ore", 6)
-    ore_cf("ore_void_crystal", "endreborn:void_crystal_ore", 4)
-    ore_cf("ore_obsidian", "endreborn:obsidian", 14)
+    ore_cf("ore_chorus", "voidweaver:chorus_ore", 6)
+    ore_cf("ore_void_crystal", "voidweaver:void_crystal_ore", 4)
+    ore_cf("ore_obsidian", "voidweaver:obsidian", 14)
     chorus_tree_cf()
-    patch_cf("patch_void_bloom", "endreborn:void_bloom")
-    patch_cf("patch_crystal_bloom", "endreborn:crystal_bloom")
+    patch_cf("patch_void_bloom", "voidweaver:void_bloom")
+    patch_cf("patch_crystal_bloom", "voidweaver:crystal_bloom")
 
     ore_pf("ore_chorus", "ore_chorus", 8)
     ore_pf("ore_void_crystal", "ore_void_crystal", 5, 0, 100)
@@ -123,13 +123,13 @@ def spawners(ambient=None, creature=None, monster=None):
 
 
 def spawn(entity, weight, lo, hi):
-    return {"type": f"endreborn:{entity}", "weight": weight, "minCount": lo, "maxCount": hi}
+    return {"type": f"voidweaver:{entity}", "weight": weight, "minCount": lo, "maxCount": hi}
 
 
 def biome(name, sky, fog, spawn_cfg, ores, veg, particle=None):
     features = [[] for _ in range(11)]
-    features[6] = [f"endreborn:{o}" for o in ores]          # UNDERGROUND_ORES
-    features[9] = [f"endreborn:{v}" for v in veg]           # VEGETAL_DECORATION
+    features[6] = [f"voidweaver:{o}" for o in ores]          # UNDERGROUND_ORES
+    features[9] = [f"voidweaver:{v}" for v in veg]           # VEGETAL_DECORATION
     effects = {"sky_color": rgb(sky), "fog_color": rgb(fog),
                "water_color": rgb("#3f76e4"), "water_fog_color": rgb("#050533")}
     if particle:
@@ -164,21 +164,21 @@ def build_biomes():
 
 # ---------- flora blocks ----------
 def build_flora():
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
     flora = {"void_bloom": ("#b060ff", True), "crystal_bloom": ("#7fe0ff", False)}
     imgs = {}
     for name, (color, glow) in flora.items():
         img = T.plant_tex(color, name, glow=glow)
         imgs[name] = img
-        T.save(img, os.path.join(RES, "assets", "endreborn", "textures", "block", name + ".png"))
+        T.save(img, os.path.join(RES, "assets", "voidweaver", "textures", "block", name + ".png"))
         for rel, obj in J.cross(name, name):
             writej(rel, obj)
         writej(*J.loot_self(name))
-        lang[f"block.endreborn.{name}"] = " ".join(w.capitalize() for w in name.split("_"))
+        lang[f"block.voidweaver.{name}"] = " ".join(w.capitalize() for w in name.split("_"))
     for name in ("shattered_barrens", "void_gardens", "obsidian_wastes",
                  "crystal_highlands", "endless_abyss", "chorus_jungle"):
-        lang[f"biome.endreborn.{name}"] = " ".join(w.capitalize() for w in name.split("_"))
+        lang[f"biome.voidweaver.{name}"] = " ".join(w.capitalize() for w in name.split("_"))
     json.dump(lang, open(lang_path, "w"), indent=2)
     return imgs
 

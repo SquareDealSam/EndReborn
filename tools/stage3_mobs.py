@@ -13,7 +13,7 @@ import textures as T
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-ENT = os.path.join(RES, "assets", "endreborn", "textures", "entity")
+ENT = os.path.join(RES, "assets", "voidweaver", "textures", "entity")
 
 # name -> (display, base, accent, groups[(name,origin,from,to)], animation)
 MOBS = {
@@ -78,14 +78,14 @@ MOBS = {
 
 
 def main():
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
     imgs = {}
     for name, (disp, base, accent, *_rest) in MOBS.items():
         img = T.entity_sheet(base, accent, name)
         imgs[name] = img
         T.save(img, os.path.join(ENT, name + ".png"))
-        lang[f"entity.endreborn.{name}"] = disp
+        lang[f"entity.voidweaver.{name}"] = disp
     json.dump(lang, open(lang_path, "w"), indent=2)
     print(f"seeded {len(MOBS)} entity textures + lang")
 

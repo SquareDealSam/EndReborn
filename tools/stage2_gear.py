@@ -14,7 +14,7 @@ import mcjson as J
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-TEX = os.path.join(RES, "assets", "endreborn", "textures")
+TEX = os.path.join(RES, "assets", "voidweaver", "textures")
 
 MATS = {"chorus_alloy": "#4fb39a", "void_crystal": "#57e8ff"}
 TOOLS = ["sword", "pickaxe", "axe", "shovel", "hoe"]
@@ -67,14 +67,14 @@ def main():
                      "to": [16, 16, 16], "origin": [8, 8, 8]}], "texture": tabname, "faces": True})
         print(f"  tab+texture -> {tabname}")
 
-    lang = json.load(open(os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")))
+    lang = json.load(open(os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")))
 
     # storage blocks
     for name in ("chorus_alloy_block", "void_crystal_block"):
         for rel, obj in J.cube_all(name, name):
             writej(rel, obj)
         writej(*J.loot_self(name))
-        lang[f"block.endreborn.{name}"] = title(name)
+        lang[f"block.voidweaver.{name}"] = title(name)
 
     # tools + armor item models + lang
     for mat in MATS:
@@ -82,26 +82,26 @@ def main():
             n = f"{mat}_{k}"
             for rel, obj in J.item_handheld(n):
                 writej(rel, obj)
-            lang[f"item.endreborn.{n}"] = title(n)
+            lang[f"item.voidweaver.{n}"] = title(n)
         for k in ARMOR:
             n = f"{mat}_{k}"
             for rel, obj in J.item_generated(n):
                 writej(rel, obj)
-            lang[f"item.endreborn.{n}"] = title(n)
+            lang[f"item.voidweaver.{n}"] = title(n)
         # equipment definition
-        writej(f"assets/endreborn/equipment/{mat}.json",
-               {"layers": {"humanoid": [{"texture": f"endreborn:{mat}"}],
-                           "humanoid_leggings": [{"texture": f"endreborn:{mat}"}]}})
+        writej(f"assets/voidweaver/equipment/{mat}.json",
+               {"layers": {"humanoid": [{"texture": f"voidweaver:{mat}"}],
+                           "humanoid_leggings": [{"texture": f"voidweaver:{mat}"}]}})
     # material item lang (models already exist from the slice)
-    lang["item.endreborn.chorus_alloy_ingot"] = "Chorus Alloy Ingot"
-    lang["item.endreborn.void_crystal"] = "Void Crystal"
-    lang["item.endreborn.crystal_shard"] = "Crystal Shard"
+    lang["item.voidweaver.chorus_alloy_ingot"] = "Chorus Alloy Ingot"
+    lang["item.voidweaver.void_crystal"] = "Void Crystal"
+    lang["item.voidweaver.crystal_shard"] = "Crystal Shard"
 
     # repair tags
-    writej("data/endreborn/tags/item/chorus_alloy_repair.json",
-           {"replace": False, "values": ["endreborn:chorus_alloy_ingot"]})
-    writej("data/endreborn/tags/item/void_crystal_repair.json",
-           {"replace": False, "values": ["endreborn:void_crystal"]})
+    writej("data/voidweaver/tags/item/chorus_alloy_repair.json",
+           {"replace": False, "values": ["voidweaver:chorus_alloy_ingot"]})
+    writej("data/voidweaver/tags/item/void_crystal_repair.json",
+           {"replace": False, "values": ["voidweaver:void_crystal"]})
 
     # merge storage blocks into mining tags
     def merge(path, adds):
@@ -111,11 +111,11 @@ def main():
         writej(path, {"replace": False, "values": sorted(vals)})
 
     merge("data/minecraft/tags/block/mineable/pickaxe.json",
-          ["endreborn:chorus_alloy_block", "endreborn:void_crystal_block"])
-    merge("data/minecraft/tags/block/needs_iron_tool.json", ["endreborn:chorus_alloy_block"])
-    merge("data/minecraft/tags/block/needs_diamond_tool.json", ["endreborn:void_crystal_block"])
+          ["voidweaver:chorus_alloy_block", "voidweaver:void_crystal_block"])
+    merge("data/minecraft/tags/block/needs_iron_tool.json", ["voidweaver:chorus_alloy_block"])
+    merge("data/minecraft/tags/block/needs_diamond_tool.json", ["voidweaver:void_crystal_block"])
 
-    json.dump(lang, open(os.path.join(RES, "assets", "endreborn", "lang", "en_us.json"), "w"), indent=2)
+    json.dump(lang, open(os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json"), "w"), indent=2)
     print("emitted gear: 2 storage blocks, 10 tools, 8 armor, 2 equipment defs, repair tags.")
 
 

@@ -17,7 +17,7 @@ import mcjson as J
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-TEX = os.path.join(RES, "assets", "endreborn", "textures")
+TEX = os.path.join(RES, "assets", "voidweaver", "textures")
 
 FAMILIES = {
     "void_stone":    dict(base="#2b2340", polish="#33294d", chisel="#4a3d63", brick="#3c3357", tier="iron"),
@@ -84,7 +84,7 @@ def main():
         print(f"  tab+texture -> {name}")
 
     # 2) JSON for all stone families.
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path)) if os.path.exists(lang_path) else {}
     mineable, needs_iron, needs_diamond = [], [], []
 
@@ -102,14 +102,14 @@ def main():
         for rel, obj in files:
             writej(rel, obj)
         writej(*loot)
-        lang[f"block.endreborn.{name}"] = title(name)
+        lang[f"block.voidweaver.{name}"] = title(name)
 
     for base, c in FAMILIES.items():
         for piece in family_pieces(base):
             emit_block(*piece)
             name = piece[0]
-            mineable.append(f"endreborn:{name}")
-            (needs_diamond if c["tier"] == "diamond" else needs_iron).append(f"endreborn:{name}")
+            mineable.append(f"voidweaver:{name}")
+            (needs_diamond if c["tier"] == "diamond" else needs_iron).append(f"voidweaver:{name}")
 
     # 3) Fix chorus_log -> pillar; re-emit ores + planks as cube_all.
     for rel, obj in J.cube_column("chorus_log", "chorus_log", "chorus_log_top"):
@@ -119,15 +119,15 @@ def main():
         for rel, obj in J.cube_all(name, name):
             writej(rel, obj)
         writej(*J.loot_self(name))
-    mineable += ["endreborn:chorus_ore", "endreborn:void_crystal_ore"]
-    needs_iron.append("endreborn:chorus_ore")
-    needs_diamond.append("endreborn:void_crystal_ore")
+    mineable += ["voidweaver:chorus_ore", "voidweaver:void_crystal_ore"]
+    needs_iron.append("voidweaver:chorus_ore")
+    needs_diamond.append("voidweaver:void_crystal_ore")
 
     # 4) Tags: pickaxe-mineable + tool tiers; chorus wood -> axe.
     writej("data/minecraft/tags/block/mineable/pickaxe.json",
            {"replace": False, "values": sorted(set(mineable))})
     writej("data/minecraft/tags/block/mineable/axe.json",
-           {"replace": False, "values": ["endreborn:chorus_log", "endreborn:chorus_planks"]})
+           {"replace": False, "values": ["voidweaver:chorus_log", "voidweaver:chorus_planks"]})
     writej("data/minecraft/tags/block/needs_iron_tool.json",
            {"replace": False, "values": sorted(set(needs_iron))})
     writej("data/minecraft/tags/block/needs_diamond_tool.json",

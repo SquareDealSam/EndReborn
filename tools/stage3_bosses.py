@@ -13,7 +13,7 @@ import textures as T
 from bb_mcp import BB
 
 RES = os.path.join(os.path.dirname(__file__), "..", "src", "main", "resources")
-ENT = os.path.join(RES, "assets", "endreborn", "textures", "entity")
+ENT = os.path.join(RES, "assets", "voidweaver", "textures", "entity")
 
 
 def writej(rel, obj):
@@ -27,7 +27,7 @@ def uniform(lo, hi):
 
 
 def item(name, funcs=None):
-    e = {"type": "minecraft:item", "name": f"endreborn:{name}"}
+    e = {"type": "minecraft:item", "name": f"voidweaver:{name}"}
     if funcs:
         e["functions"] = funcs
     return e
@@ -72,15 +72,15 @@ LOOT = {
 
 
 def main():
-    lang_path = os.path.join(RES, "assets", "endreborn", "lang", "en_us.json")
+    lang_path = os.path.join(RES, "assets", "voidweaver", "lang", "en_us.json")
     lang = json.load(open(lang_path))
     imgs = {}
     for name, (disp, base, accent, *_r) in BOSSES.items():
         img = T.entity_sheet(base, accent, name)
         imgs[name] = img
         T.save(img, os.path.join(ENT, name + ".png"))
-        lang[f"entity.endreborn.{name}"] = disp
-        writej(f"data/endreborn/loot_table/entities/{name}.json", LOOT[name])
+        lang[f"entity.voidweaver.{name}"] = disp
+        writej(f"data/voidweaver/loot_table/entities/{name}.json", LOOT[name])
     json.dump(lang, open(lang_path, "w"), indent=2)
     print("seeded 2 boss textures + lang + loot tables")
 

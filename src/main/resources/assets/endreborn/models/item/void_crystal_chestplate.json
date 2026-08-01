@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "endreborn:item/void_crystal_chestplate"
-  }
-}

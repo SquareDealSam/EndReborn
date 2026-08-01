@@ -1,4 +1,4 @@
-# EndReborn
+# The Void-Weaver's Awakening
 
 A **Fabric mod for Minecraft 26.2** that overhauls the **End dimension** beyond the dragon
 fight — new biomes, mobs, bosses, materials, structures, and a full set of custom sound

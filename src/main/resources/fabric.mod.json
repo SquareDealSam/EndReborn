@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "endreborn",
+  "id": "voidweaver",
   "version": "${version}",
-  "name": "EndReborn",
+  "name": "The Void-Weaver's Awakening",
   "description": "A complete overhaul of the End dimension: new biomes, mobs, materials, structures, and sound past the dragon fight.",
   "authors": [
-    "EndReborn Contributors"
+    "The Void-Weaver's Awakening Contributors"
   ],
   "contact": {},
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.endreborn.endreborn.EndReborn"
+      "com.voidweaver.voidweaver.VoidWeaver"
     ],
     "client": [
-      "com.endreborn.endreborn.EndRebornClient"
+      "com.voidweaver.voidweaver.VoidWeaverClient"
     ]
   },
   "depends": {
