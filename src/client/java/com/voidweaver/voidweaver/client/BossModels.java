@@ -84,3 +84,51 @@ class VoidbringerModel extends EntityModel<BossRenderState> {
         this.rightArm.zRot = spread;
     }
 }
+
+/** The Prismarch — crystal-armoured colossus with a rune crown and four floating
+ * hands that orbit its body, spinning faster while attacking. */
+class PrismarchModel extends EntityModel<BossRenderState> {
+    private final ModelPart body;
+    private final ModelPart head;
+    private final ModelPart crown;
+    private final ModelPart[] hands = new ModelPart[4];
+
+    PrismarchModel(ModelPart root) {
+        super(root);
+        this.body = root.getChild("body");
+        this.head = root.getChild("head");
+        this.crown = root.getChild("crown");
+        for (int i = 0; i < 4; i++) {
+            this.hands[i] = root.getChild("hand" + i);
+        }
+    }
+
+    static LayerDefinition createBodyLayer() {
+        MeshDefinition m = new MeshDefinition();
+        PartDefinition r = m.getRoot();
+        r.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-6, -14, -4, 12, 16, 8), PartPose.offset(0, 18, 0));
+        r.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 24).addBox(-4, -6, -4, 8, 6, 8), PartPose.offset(0, 4, 0));
+        r.addOrReplaceChild("crown", CubeListBuilder.create().texOffs(0, 40).addBox(-1.5F, -13, -1.5F, 3, 7, 3), PartPose.offset(0, 2, 0));
+        r.addOrReplaceChild("leg0", CubeListBuilder.create().texOffs(32, 0).addBox(-2.5F, 0, -2.5F, 5, 10, 5), PartPose.offset(3, 20, 0));
+        r.addOrReplaceChild("leg1", CubeListBuilder.create().mirror().texOffs(32, 0).addBox(-2.5F, 0, -2.5F, 5, 10, 5), PartPose.offset(-3, 20, 0));
+        for (int i = 0; i < 4; i++) {
+            r.addOrReplaceChild("hand" + i, CubeListBuilder.create().texOffs(48, 0).addBox(9, -3, -3, 4, 6, 5), PartPose.offset(0, 12, 0));
+        }
+        return LayerDefinition.create(m, 64, 64);
+    }
+
+    @Override
+    public void setupAnim(BossRenderState s) {
+        super.setupAnim(s);
+        float age = s.ageInTicks;
+        float spin = s.attackState > 0 ? 0.12F : 0.05F;
+        for (int i = 0; i < 4; i++) {
+            this.hands[i].yRot = age * spin + i * (Mth.PI / 2F);
+            this.hands[i].zRot = Mth.sin(age * 0.1F + i) * 0.25F;
+            this.hands[i].y = 12 + Mth.sin(age * 0.12F + i * 1.5F) * 1.5F;
+        }
+        this.body.zRot = Mth.sin(age * 0.06F) * 0.04F;
+        this.head.y = 4 + Mth.sin(age * 0.08F) * 0.5F;
+        this.crown.y = 2 + Mth.sin(age * 0.08F) * 0.5F;
+    }
+}

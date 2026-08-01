@@ -20,6 +20,7 @@ public final class ModEntityRenderers {
     public static final ModelLayerLocation CRYSTAL_SENTINEL_LAYER = layer("crystal_sentinel");
     public static final ModelLayerLocation CHORUS_GUARDIAN_LAYER = layer("chorus_guardian");
     public static final ModelLayerLocation VOIDBRINGER_LAYER = layer("voidbringer");
+    public static final ModelLayerLocation PRISMARCH_LAYER = layer("prismarch");
 
     private static ModelLayerLocation layer(String name) {
         return new ModelLayerLocation(VoidWeaver.id(name), "main");
@@ -39,6 +40,7 @@ public final class ModEntityRenderers {
         ModelLayerRegistry.registerModelLayer(CRYSTAL_SENTINEL_LAYER, CrystalSentinelModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(CHORUS_GUARDIAN_LAYER, ChorusGuardianModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(VOIDBRINGER_LAYER, VoidbringerModel::createBodyLayer);
+        ModelLayerRegistry.registerModelLayer(PRISMARCH_LAYER, PrismarchModel::createBodyLayer);
 
         EntityRendererRegistry.register(ModEntities.VOID_MOTH, ctx ->
                 new VoidMothRenderer(ctx));
@@ -58,5 +60,7 @@ public final class ModEntityRenderers {
                 new BossRenderer<>(ctx, new ChorusGuardianModel(ctx.bakeLayer(CHORUS_GUARDIAN_LAYER)), 0.8F, tex("chorus_guardian")));
         EntityRendererRegistry.register(ModEntities.VOIDBRINGER, ctx ->
                 new BossRenderer<>(ctx, new VoidbringerModel(ctx.bakeLayer(VOIDBRINGER_LAYER)), 1.0F, tex("voidbringer")));
+        EntityRendererRegistry.register(ModEntities.PRISMARCH, ctx ->
+                new BossRenderer<>(ctx, new PrismarchModel(ctx.bakeLayer(PRISMARCH_LAYER)), 0.9F, tex("prismarch")));
     }
 }

@@ -7,6 +7,7 @@ import com.voidweaver.voidweaver.entity.ChorusSprite;
 import com.voidweaver.voidweaver.entity.CrystalSentinel;
 import com.voidweaver.voidweaver.entity.CrystalStrider;
 import com.voidweaver.voidweaver.entity.ObsidianGolem;
+import com.voidweaver.voidweaver.entity.PrismarchBoss;
 import com.voidweaver.voidweaver.entity.VoidMoth;
 import com.voidweaver.voidweaver.entity.Voidbringer;
 import com.voidweaver.voidweaver.entity.VoidWraith;
@@ -51,6 +52,8 @@ public final class ModEntities {
             EntityType.Builder.of(ChorusGuardian::new, MobCategory.MONSTER).sized(1.4F, 3.0F).fireImmune().clientTrackingRange(16));
     public static final EntityType<Voidbringer> VOIDBRINGER = register("voidbringer",
             EntityType.Builder.of(Voidbringer::new, MobCategory.MONSTER).sized(1.6F, 3.6F).fireImmune().clientTrackingRange(20));
+    public static final EntityType<PrismarchBoss> PRISMARCH = register("prismarch",
+            EntityType.Builder.of(PrismarchBoss::new, MobCategory.MONSTER).sized(1.6F, 3.4F).fireImmune().clientTrackingRange(20));
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
         ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, VoidWeaver.id(name));
@@ -67,10 +70,11 @@ public final class ModEntities {
         FabricDefaultAttributeRegistry.register(CRYSTAL_SENTINEL, CrystalSentinel.createAttributes());
         FabricDefaultAttributeRegistry.register(CHORUS_GUARDIAN, ChorusGuardian.createAttributes());
         FabricDefaultAttributeRegistry.register(VOIDBRINGER, Voidbringer.createAttributes());
+        FabricDefaultAttributeRegistry.register(PRISMARCH, PrismarchBoss.createAttributes());
 
         registerSpawnPlacements();
 
-        VoidWeaver.LOGGER.info("[VoidWeaver] Registered 7 mobs + 2 bosses.");
+        VoidWeaver.LOGGER.info("[VoidWeaver] Registered 7 mobs + 3 bosses.");
     }
 
     /**
